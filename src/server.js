@@ -9,6 +9,8 @@ const cors = require('cors');
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 // const io = require('socket.io');
+const path = require('path');
+
 
 require('dotenv').config();
 
@@ -25,6 +27,7 @@ require('dotenv').config();
 
 		app.disable('x-powered-by');
 
+		app.use(express.static(path.join(__dirname, 'client', 'build')))
 		app.use(cors({
 			credentials: true,
 			origin: 'http://localhost:3000'
@@ -65,7 +68,9 @@ require('dotenv').config();
 		apiRouter.use('/message', messageRouter(io));
 		apiRouter.use('/friend', friendRouter);
 
-
+		app.get('*', (req, res) => {
+			res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+		})
 
 		const listener = http.listen(process.env.PORT, () => {
 			console.log('Listening on port ' + listener.address().port)
