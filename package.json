@@ -7,7 +7,7 @@
     "start": "node /src/index.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "engines": "10.16.1",
+  "engines": "",
   "author": "michi",
   "license": "ISC",
   "dependencies": {
