@@ -1,0 +1,29 @@
+{
+  "name": "mc-messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/src/index.js",
+  "scripts": {
+    "start": "node /src/index.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": "10.16.1",
+  "author": "michi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.14.0",
+    "connect-livereload": "^0.6.1",
+    "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "mongoose": "^5.6.9",
+    "multer": "^1.4.2",
+    "socket.io": "^2.2.0"
+  }
+}
